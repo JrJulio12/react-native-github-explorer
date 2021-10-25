@@ -50,23 +50,25 @@ export function Card({ data, onPress }: CardProps) {
 
   function CardContent() {
     return (
-      <CardContainer
-        hasImage={!!data.imageUrl}
-        onPress={onPress}
-      >
-        <Info>
-          {data.imageUrl && (
-            <Image source={{ uri: data.imageUrl }} />
-          )}
+      <CardAnimation>
+        <CardContainer
+          hasImage={!!data.imageUrl}
+          onPress={onPress}
+        >
+          <Info>
+            {data.imageUrl && (
+              <Image source={{ uri: data.imageUrl }} />
+            )}
 
-          <TextGroup>
-            <Title numberOfLines={1}>{data.title}</Title>
-            <Description numberOfLines={1}>{data.subTitle}</Description>
-          </TextGroup>
-        </Info>
+            <TextGroup>
+              <Title numberOfLines={1}>{data.title}</Title>
+              <Description numberOfLines={1}>{data.subTitle}</Description>
+            </TextGroup>
+          </Info>
 
-        <Icon name="chevron-right" size={20} />
-      </CardContainer>
+          <Icon name="chevron-right" size={20} />
+        </CardContainer>
+      </CardAnimation>
     )
   }
 
